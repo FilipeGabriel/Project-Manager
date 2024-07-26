@@ -1,0 +1,78 @@
+<div class="container mt-5">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb breadcrumb-color">
+      <li class="breadcrumb-item active" aria-current="page"><a href="/products/list">Lista de Produtos</a></li>
+    </ol>
+  </nav>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-12">
+          <div class="alert alert-success" role="alert" *ngIf="successMessage">
+              {{ successMessage }}
+          </div>
+          <div class="alert alert-danger" role="alert" *ngIf="errorMessage">
+            {{ errorMessage }}
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <button class="btn btn-warning" (click)="newInsert()">
+          <i class="fa fa-plus"></i> Novo
+        </button>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table table-condensed">
+          <thead class="thead-background">
+            <tr class="text-center">
+              <th>ID</th>
+              <th>Nome</th>
+              <th>Preço</th>
+              <th>Quantidade</th>
+              <th>Data Cadastro</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let product of products" class="text-center">
+              <td>{{ product.id }}</td>
+              <td>{{ product.name }}</td>
+              <td>{{ product.price }}</td>
+              <td>{{ product.quantity }}</td>
+              <td>{{ product.registrationDate | date:'dd/MM/yyyy' }}</td>
+              <td>
+                <div class="row row-center">
+                  <button class="btn btn-primary mr-3" routerLink="/products/form/{{ product.id }}">
+                    <i class="fa fa-pen"></i>
+                  </button>
+                  <button class="btn btn-danger" (click)="prepareDelete(product)" data-toggle="modal" data-target="#modalDelete">
+                    <i class="fa fa-trash-alt"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div id="modalDelete" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Confirmação</h4>
+          </div>
+          <div class="modal-body" *ngIf="selectedProduct">
+            Confirma a deleção do produto {{ selectedProduct.name }}?
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-success" (click)="deleteProduct()" data-dismiss="modal" >Confirmar</button>
+            <button class="btn btn-secondary ml-2" data-dismiss="modal" >Cancelar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

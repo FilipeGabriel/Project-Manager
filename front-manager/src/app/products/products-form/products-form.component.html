@@ -1,0 +1,75 @@
+<div class="container mt-5">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb breadcrumb-color">
+      <li class="breadcrumb-item active" aria-current="page"><a href="/products/list">Lista de Produtos</a></li>
+      <li class="breadcrumb-item active" aria-current="page">{{ product.id ? 'Editar' : 'Cadastro' }}</li>
+    </ol>
+  </nav>
+  <div class="container">
+    <form #productForm="ngForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="alert alert-success" role="alert" *ngIf="success == true">
+            Produto salvo com sucesso!
+          </div>
+          <div class="alert alert-danger" role="alert" *ngIf="notSuccess == true">
+            {{ errors }}
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8 margin-lateral">
+        <div class="row mt-5" *ngIf="product.id">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Id: </label>
+              <input type="text" class="form-control" disabled="true" [ngModel]="product.id" name="id">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Data Cadastro: </label>
+              <input type="text" class="form-control" disabled="true" [ngModel]="product.registrationDate | date: 'dd/MM/yyyy'" name="registrationDate">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Nome: *</label>
+              <input type="text" class="form-control" [(ngModel)]="product.name" name="name">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Preço: *</label>
+              <input type="text" class="form-control" [(ngModel)]="product.price" name="price">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Quantidade: *</label>
+              <input type="text" class="form-control" [(ngModel)]="product.quantity" name="quantity">
+            </div>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col">
+            <button type="submit" class="btn btn-success mr-2 md-2" *ngIf="!product.id">
+              <i class="fa fa-save"></i> Salvar
+            </button>
+
+            <button type="submit" class="btn btn-primary mr-2" *ngIf="product.id">
+              <i class="fa fa-sync-alt"></i> Atualizar
+            </button>
+
+            <button type="button" class="btn btn-danger" (click)="backToList()" >
+              <i class="fa fa-arrow-alt-circle-left"></i> Voltar
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+@font-face {
+  font-family: outfit;
+  src: url("../src/assets/fonts/Outfit-VariableFont_wght.ttf");
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}

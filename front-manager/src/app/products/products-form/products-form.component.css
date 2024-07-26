@@ -1,0 +1,12 @@
+p {
+  font-size: 1.2rem;
+}
+
+.margin-lateral {
+  margin: 5% auto auto auto;
+  width: 80%;
+}
+
+.breadcrumb-color {
+  background-color: rgb(238, 238, 238);
+}

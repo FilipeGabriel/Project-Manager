@@ -1,0 +1,16 @@
+nav {
+  font-family: outfit;
+}
+
+.nav-gradient {
+  background-image: linear-gradient( to top, rgb(41, 40, 40) 30%, rgb(90, 86, 86));
+}
+
+.label-color {
+  color: rgb(230, 227, 227);
+}
+
+.margin-costimized {
+  color: rgb(172, 172, 172);
+  margin: auto 60px auto auto;
+}

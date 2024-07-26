@@ -1,0 +1,82 @@
+main {
+  font-family: outfit;
+  font-weight: bold;
+}
+
+h5 {
+  text-align: center;
+  color: white;
+}
+
+a {
+  text-align: center;
+  color: white;
+}
+
+.altera-fontes {
+  font-style: normal;
+  font-family: "Outfit"
+}
+
+.label-color {
+  color: white;
+}
+
+.login-background {
+  background-color: #cccc
+}
+
+.card-body-background {
+  background-color: rgb(69, 66, 66)
+}
+
+.card-footer-background {
+  background-color: rgb(49, 48, 48)
+}
+
+.card-footer-background-signing {
+  border: 0;
+  background-color: rgb(69, 66, 66)
+}
+
+.margin-lateral {
+  margin: auto auto auto auto;
+  width: 280px;
+}
+
+.card-margin-lateral {
+  margin: auto auto auto auto;
+  width: 390px;
+}
+
+.card-shadow {
+  box-shadow: 10px 10px 40px #000000b0;
+}
+
+.row-center-align {
+  position:absolute;
+  inset:0;
+  width: calc(100vw + 15px);
+}
+
+.space-margin {
+    margin: 30px 70px 15px 70px;
+}
+
+.space-alert {
+  margin: 10px auto auto auto;
+}
+
+.card-border-radius {
+  border-radius: 15px;
+}
+
+.card-body-radius {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card-footer-radius {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
