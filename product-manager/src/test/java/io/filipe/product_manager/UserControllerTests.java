@@ -31,7 +31,7 @@ public class UserControllerTests {
     @MockBean
     private UserRepository userRepository;
 
-    private final String BEARER_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MjIwMTQ0MTQsInVzZXJfbmFtZSI6ImZpbGlwZSIsImp0aSI6ImRjYmY0ZTNhLWI4ZTItNDUwNi04ODI5LWMxNzZlMzcyNGQyNyIsImNsaWVudF9pZCI6Im15YXBwbmFtZTEyMyIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdfQ.Lyk8EioeB5m8vSHboBh8xOvpRFjTbi19EE7rMHrv5L0";
+    private final String BEARER_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MjQ5NDU4NTksInVzZXJfbmFtZSI6ImZpbGlwZSIsImp0aSI6IjljOWJhNjgzLWE2Y2UtNGRkZi1iZjVmLWEwNTA1MDJjMDNmOCIsImNsaWVudF9pZCI6Im15YXBwbmFtZTEyMyIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdfQ.1cIc4PZVJAOGsuujN50SncCqpGbgBZXNagU1EAxV-gI";
 
     @BeforeEach
     public void setUp() {

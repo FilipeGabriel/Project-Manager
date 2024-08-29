@@ -34,7 +34,8 @@ public class ProductController {
     @PostMapping
     private ResponseEntity<Product> insert(@RequestBody ProductDTO productDTO){
         Product product = productService.insert(productDTO);
-        return ResponseEntity.status(HttpStatus.CREATED).body(product);
+        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(product.getId()).toUri();
+        return ResponseEntity.created(uri).body(product);
     }
 
     @DeleteMapping("/{id}")
